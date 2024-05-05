@@ -1,16 +1,18 @@
+using Core._Scripts.Networking.Client;
+using TMPro;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private TMP_InputField _joinCodeField;
+    
+      public async void StartHost()
+      {
+         await HostSingleton.Instance.HostController.StartHostAsync();
+      }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+      public async void StartClient()
+      {
+          await ClientSingleton.Instance.ClientController.StartClientAsync(_joinCodeField.text);
+      }
 }
