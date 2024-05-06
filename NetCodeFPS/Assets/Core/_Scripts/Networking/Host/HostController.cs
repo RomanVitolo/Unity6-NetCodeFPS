@@ -21,8 +21,6 @@ namespace Core._Scripts.Networking.Client
         
         public async Task StartHostAsync()
         {
-            Debug.Log("ERROR HERE");
-            
             try
             {
                 _allocation = await Relay.Instance.CreateAllocationAsync(MaxConnections);

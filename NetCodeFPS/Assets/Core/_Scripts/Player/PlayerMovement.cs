@@ -97,7 +97,7 @@ public class PlayerMovement : NetworkBehaviour
 
         rotationY = v_previousRotation.x;
 
-        c_Camera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+        Camera.main.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         transform.Rotate(Vector3.up * rotationY);
     }
 }

@@ -7,9 +7,7 @@ namespace Core._Scripts.Networking.Client
     public class HostSingleton : MonoBehaviour
     {
         private static HostSingleton _instance;
-
         public HostController HostController { get; private set; }
-        
         public static HostSingleton Instance
         {
             get

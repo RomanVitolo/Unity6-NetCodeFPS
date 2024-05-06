@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private TMP_InputField _joinCodeField;
+      [SerializeField] private TMP_InputField _joinCodeField;
     
       public async void StartHost()
       {
-         await HostSingleton.Instance.HostController.StartHostAsync();
+          HostSingleton.Instance.CreateHost();
+          await HostSingleton.Instance.HostController.StartHostAsync();
       }
 
       public async void StartClient()
