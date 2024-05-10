@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 6892324880922352552}
   - component: {fileID: 6340311695028210398}
   - component: {fileID: 541718942105756162}
+  - component: {fileID: 8801111088214990179}
   m_Layer: 5
   m_Name: LobbyItem
   m_TagString: Untagged
@@ -214,6 +215,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8801111088214990179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4090546612337846130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4df2dcdccd747938d2aa82462a0a5cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lobbyNameText: {fileID: 4184796191354100970}
+  _lobbyPlayersText: {fileID: 9143024714812052730}
 --- !u!1 &4122571555386541504
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,4 +621,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 428016829271346009}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8801111088214990179}
+        m_TargetAssemblyTypeName: Core._Scripts.UI.LobbyItem, Assembly-CSharp
+        m_MethodName: Join
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

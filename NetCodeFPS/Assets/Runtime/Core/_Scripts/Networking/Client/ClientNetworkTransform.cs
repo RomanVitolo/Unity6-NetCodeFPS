@@ -1,5 +1,4 @@
 using Unity.Netcode.Components;
-using UnityEngine;
 
 public class ClientNetworkTransform : NetworkTransform
 {
@@ -19,8 +18,5 @@ public class ClientNetworkTransform : NetworkTransform
         if(CanCommitToTransform) TryCommitTransformToServer(transform, NetworkManager.LocalTime.Time);
     }
 
-    protected override bool OnIsServerAuthoritative()
-    {
-        return false;
-    }
+    protected override bool OnIsServerAuthoritative() => false;        
 }

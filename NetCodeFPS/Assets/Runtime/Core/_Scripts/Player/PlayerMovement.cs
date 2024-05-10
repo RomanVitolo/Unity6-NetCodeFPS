@@ -60,6 +60,7 @@ public class PlayerMovement : NetworkBehaviour
         if (!IsOwner) return;
 
         ApplyMovement();
+        ApplyRotation();
     }
 
     private void ApplyMovement()
@@ -87,7 +88,7 @@ public class PlayerMovement : NetworkBehaviour
     private void LateUpdate()
     {
         if (!IsOwner) return;
-        CameraRotation();
+        //CameraRotation();
     }
 
     private void CameraRotation()
@@ -95,9 +96,14 @@ public class PlayerMovement : NetworkBehaviour
         rotationX -= v_previousRotation.y;
         rotationX = Mathf.Clamp(rotationX, -20f, 20f);
 
-        rotationY = v_previousRotation.x;
+        var rotationY = v_previousRotation.x;
 
-        Camera.main.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        transform.Rotate(Vector3.up * rotationY);
+        Camera.main.transform.localRotation = Quaternion.Euler(rotationX, rotationY, 0);     
+    }
+
+    private void ApplyRotation()
+    {
+        var rotationY = v_previousRotation.x;   
+        transform.Rotate(0f, -rotationY * f_RotationSpeed, 0f);  
     }
 }
