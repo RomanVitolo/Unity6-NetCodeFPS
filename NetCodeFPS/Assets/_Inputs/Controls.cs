@@ -76,7 +76,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Look"",
                     ""type"": ""Value"",
-                    ""id"": ""ba0b2bd5-8492-4da7-a52c-e78b92aeeecf"",
+                    ""id"": ""ad8ff448-d281-4f5f-b0a5-0193a9f3cdbb"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -140,19 +140,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""f8c1f086-4786-4a95-b6c3-5043c4e66a84"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard & Mouse"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": ""2D Vector"",
-                    ""id"": ""a51b00b8-b9bd-4c44-968f-d4e5583fd357"",
+                    ""id"": ""cf585699-ebca-4597-8083-10471881de78"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -163,7 +152,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""b996f714-a44d-4c72-a68c-f90c9370fe77"",
+                    ""id"": ""deeaa70e-d2bf-4e06-b6b0-816a9f4f9436"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -174,7 +163,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""54495fb7-4048-46c1-8a20-f734d090db9c"",
+                    ""id"": ""6f5ed8cf-ddfe-49a3-86b4-1539b580dd7c"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -185,7 +174,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""59a91062-5343-4d91-9551-5d8b818bb893"",
+                    ""id"": ""41b6ad8b-c083-47a9-a2b8-0d9d08e69aea"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -196,7 +185,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""deb82d05-2395-47f2-86c8-819ff06aa356"",
+                    ""id"": ""a58f96a0-3c0b-41ed-bc17-a50bd1f7e2ec"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -207,71 +196,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a04debda-bd07-4b9e-ac32-52c08390005d"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard & Mouse"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""52de8611-7080-4cb5-8f9b-61b02f26cb80"",
+                    ""id"": ""6fc5b4c9-6a1f-4b65-80bd-63b0cf547c49"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard & Mouse"",
                     ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""CameraLook"",
-            ""id"": ""db112441-2876-46ed-9c35-0e7bef909403"",
-            ""actions"": [
-                {
-                    ""name"": ""MouseX"",
-                    ""type"": ""Value"",
-                    ""id"": ""ff74453a-02fd-41a3-8fb8-cd1881b16d80"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""MouseY"",
-                    ""type"": ""Value"",
-                    ""id"": ""f80058fc-6c53-4a87-9e6d-a7d39e02696a"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""d8d1b36a-201a-4f08-a547-967f077e7c66"",
-                    ""path"": ""<Mouse>/delta/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard & Mouse"",
-                    ""action"": ""MouseX"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1bf27d42-e845-41e9-bbb8-676e52b7c514"",
-                    ""path"": ""<Mouse>/delta/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard & Mouse"",
-                    ""action"": ""MouseY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -305,16 +235,11 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-        // CameraLook
-        m_CameraLook = asset.FindActionMap("CameraLook", throwIfNotFound: true);
-        m_CameraLook_MouseX = m_CameraLook.FindAction("MouseX", throwIfNotFound: true);
-        m_CameraLook_MouseY = m_CameraLook.FindAction("MouseY", throwIfNotFound: true);
     }
 
     ~@Controls()
     {
         Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, Controls.Player.Disable() has not been called.");
-        Debug.Assert(!m_CameraLook.enabled, "This will cause a leak and performance issues, Controls.CameraLook.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -458,60 +383,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
-
-    // CameraLook
-    private readonly InputActionMap m_CameraLook;
-    private List<ICameraLookActions> m_CameraLookActionsCallbackInterfaces = new List<ICameraLookActions>();
-    private readonly InputAction m_CameraLook_MouseX;
-    private readonly InputAction m_CameraLook_MouseY;
-    public struct CameraLookActions
-    {
-        private @Controls m_Wrapper;
-        public CameraLookActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MouseX => m_Wrapper.m_CameraLook_MouseX;
-        public InputAction @MouseY => m_Wrapper.m_CameraLook_MouseY;
-        public InputActionMap Get() { return m_Wrapper.m_CameraLook; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(CameraLookActions set) { return set.Get(); }
-        public void AddCallbacks(ICameraLookActions instance)
-        {
-            if (instance == null || m_Wrapper.m_CameraLookActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_CameraLookActionsCallbackInterfaces.Add(instance);
-            @MouseX.started += instance.OnMouseX;
-            @MouseX.performed += instance.OnMouseX;
-            @MouseX.canceled += instance.OnMouseX;
-            @MouseY.started += instance.OnMouseY;
-            @MouseY.performed += instance.OnMouseY;
-            @MouseY.canceled += instance.OnMouseY;
-        }
-
-        private void UnregisterCallbacks(ICameraLookActions instance)
-        {
-            @MouseX.started -= instance.OnMouseX;
-            @MouseX.performed -= instance.OnMouseX;
-            @MouseX.canceled -= instance.OnMouseX;
-            @MouseY.started -= instance.OnMouseY;
-            @MouseY.performed -= instance.OnMouseY;
-            @MouseY.canceled -= instance.OnMouseY;
-        }
-
-        public void RemoveCallbacks(ICameraLookActions instance)
-        {
-            if (m_Wrapper.m_CameraLookActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(ICameraLookActions instance)
-        {
-            foreach (var item in m_Wrapper.m_CameraLookActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_CameraLookActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public CameraLookActions @CameraLook => new CameraLookActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -529,10 +400,5 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnRun(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
-    }
-    public interface ICameraLookActions
-    {
-        void OnMouseX(InputAction.CallbackContext context);
-        void OnMouseY(InputAction.CallbackContext context);
     }
 }

@@ -24,7 +24,7 @@ namespace Core._Scripts.Networking.Client
         private string _joinCode;
         private string _lobbyId;
 
-        private NetworkServer _networkServer;
+        public NetworkServer NetworkServer { get; private set; }
         
         private const string const_GameSceneName = "Gameplay";
 
@@ -86,7 +86,7 @@ namespace Core._Scripts.Networking.Client
                 return;
             }
 
-            _networkServer = new NetworkServer(NetworkManager.Singleton);
+            NetworkServer = new NetworkServer(NetworkManager.Singleton);
             
             UserData userData = new UserData
             {
@@ -131,7 +131,7 @@ namespace Core._Scripts.Networking.Client
                 _lobbyId = string.Empty;
             }
             
-            _networkServer?.Dispose();
+            NetworkServer?.Dispose();
         }
     }
 }

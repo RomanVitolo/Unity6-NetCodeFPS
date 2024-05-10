@@ -7,11 +7,12 @@ using static Controls;
 public class InputReader : ScriptableObject, IPlayerActions
 {
     public event Action<bool> PrimaryFireEvent; 
-    public event Action<Vector2> MoveEvent; 
+    public event Action<Vector2> MoveEvent;   
     public event Action<Vector2> LookEvent; 
     
     private Controls _controls;
-    
+    private IPlayerActions _playerActionsImplementation;
+
     private void OnEnable()
     {
         if (_controls == null)
@@ -20,18 +21,13 @@ public class InputReader : ScriptableObject, IPlayerActions
             _controls.Player.SetCallbacks(this);
         }
         
-        _controls.Player.Enable();
+        _controls.Player.Enable();      
     }
     
     public void OnMovement(InputAction.CallbackContext context)
     {
-        MoveEvent?.Invoke(context.ReadValue<Vector2>());
-    }
-    
-    public void OnLook(InputAction.CallbackContext context)
-    {
-        LookEvent?.Invoke(context.ReadValue<Vector2>());
-    }
+        MoveEvent?.Invoke(context.canceled ? Vector2.zero : context.ReadValue<Vector2>());      
+    }         
 
     public void OnPrimaryFire(InputAction.CallbackContext context)
     {
@@ -54,6 +50,11 @@ public class InputReader : ScriptableObject, IPlayerActions
     public void OnCrouch(InputAction.CallbackContext context)
     {
        
+    }  
+    
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        LookEvent?.Invoke(context.canceled ? Vector2.zero : context.ReadValue<Vector2>());   
     }
 
     private void OnDisable() => _controls.Player.Disable();

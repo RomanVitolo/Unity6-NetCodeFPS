@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using Core._Scripts.Networking.Shared;
 using Newtonsoft.Json;
-using Unity.Netcode;     
+using Runtime.Utilities;
+using Unity.Netcode;
+using UnityEngine;
 
 public class NetworkServer : IDisposable
 {
@@ -29,12 +31,14 @@ public class NetworkServer : IDisposable
           AuthIdToUserData[userData.UserAuthId] = userData;
 
           response.Approved = true;
+          response.Position = SpawnPoint.GetRandomSpawnPosition();
+          response.Rotation = Quaternion.identity;
           response.CreatePlayerObject = true;
      }
      
      private void OnNetworkReady()
      {
-          _networkManager.OnClientDisconnectCallback += OnClientDisconnect;
+          _networkManager.OnClientDisconnectCallback += OnClientDisconnect;    
      }
 
      private void OnClientDisconnect(ulong clientId)
@@ -44,6 +48,15 @@ public class NetworkServer : IDisposable
                ClientIdToAuth.Remove(clientId);
                AuthIdToUserData.Remove(authId);
           }
+     }
+
+     public UserData GetUserDataByClientId(ulong clientID)
+     {
+          if (ClientIdToAuth.TryGetValue(clientID, out string authId))
+          {
+               return AuthIdToUserData.GetValueOrDefault(authId);
+          }            
+          return null;
      }
 
      public void Dispose()

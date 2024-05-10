@@ -6,104 +6,108 @@ using UnityEngine;
 public class PlayerMovement : NetworkBehaviour
 {
     [SerializeField] private InputReader _inputReader;
-    [SerializeField] private CharacterController _controller;
-    [SerializeField] private Camera c_Camera;
+    [SerializeField] private CharacterController _controller;     
 
-    private const float f_Sens = 4f;
+    private const float f_Sens = 3f;
     private const float f_Gravity = 9.81f;
-    private const float f_RotationSpeed = 7f;
+    private const float f_RotationSpeed = 15f;
+    private const float f_smoothness = 1.5f;
+    
     private float f_VerticalVelocity;
 
     private Vector2 v_previousMovement;
     private Vector2 v_previousRotation;
 
-    private Vector3 v_movementDirection = Vector3.zero;
+    private Vector3 v_movementDirection = Vector3.zero;   
+    private Vector3 v_CurrentMovement;
 
     private void Awake()
     {
-        if(_controller == null) _controller = GetComponent<CharacterController>();
-        if(c_Camera == null) c_Camera = GetComponentInChildren<Camera>();
+        if(_controller == null) _controller = GetComponent<CharacterController>();     
     }
 
     public override void OnNetworkSpawn()
     {
         if (!IsOwner) return;
         
-        _inputReader.MoveEvent += HandleMove;
-        _inputReader.LookEvent += LookRotation;
-
-    }
-
-    private void LookRotation(Vector2 rotationInput)
+        _inputReader.MoveEvent += HandleMove;  
+        _inputReader.LookEvent += HandleLookRotation;
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;           
+    }       
+ 
+    private void HandleLookRotation(Vector2 rotationInput)
     {
         v_previousRotation = rotationInput;
     }
 
     private void HandleMove(Vector2 movementInput)
     {
-        v_previousMovement = movementInput;
-    }
-
-    public override void OnNetworkDespawn()
-    {
-        if (!IsOwner) return;
-        
-        _inputReader.MoveEvent -= HandleMove;
-        _inputReader.LookEvent -= LookRotation;
-        
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
+       v_previousMovement = movementInput;     
+    }                               
 
     void Update()
     {
         if (!IsOwner) return;
 
-        ApplyMovement();
-        ApplyRotation();
-    }
-
+        ApplyMovement();   
+    }   
+    
     private void ApplyMovement()
-    {
-        v_movementDirection = new Vector3(v_previousMovement.x, 0f, v_previousMovement.y);
-        ApplyGravity();
+    {   
+        v_movementDirection = new Vector3(v_previousMovement.x, 0f, v_previousMovement.y);     
+        var v_worldDirection = transform.TransformDirection(v_movementDirection);  
+         
+        v_worldDirection.Normalize();
+
+        v_CurrentMovement.x = v_worldDirection.x * f_Sens;     
+        v_CurrentMovement.z = v_worldDirection.z * f_Sens;
         
-        if (v_movementDirection.magnitude > 0)
-            _controller.Move(v_movementDirection * (f_Sens * Time.deltaTime));
-    }
+        ApplyGravity(); 
+
+        if (v_movementDirection.magnitude > 0)  
+            _controller.Move(v_CurrentMovement * Time.deltaTime);   
+                
+        ApplyRotation();            
+    }    
 
     private void ApplyGravity()
     {
         if (_controller.isGrounded == false)
         {
             f_VerticalVelocity -= f_Gravity * Time.deltaTime;
-            v_movementDirection.y = f_VerticalVelocity;
+            v_CurrentMovement.y = f_VerticalVelocity;
         }
         else
-            f_VerticalVelocity = -0.5f;
-    }
-
-    private float rotationY;
-    private float rotationX;
-    private void LateUpdate()
-    {
-        if (!IsOwner) return;
-        //CameraRotation();
-    }
-
-    private void CameraRotation()
-    {
-        rotationX -= v_previousRotation.y;
-        rotationX = Mathf.Clamp(rotationX, -20f, 20f);
-
-        var rotationY = v_previousRotation.x;
-
-        Camera.main.transform.localRotation = Quaternion.Euler(rotationX, rotationY, 0);     
-    }
+            f_VerticalVelocity = -.5f;
+    }     
 
     private void ApplyRotation()
     {
-        var rotationY = v_previousRotation.x;   
-        transform.Rotate(0f, -rotationY * f_RotationSpeed, 0f);  
+        float mouseX = v_previousRotation.x * f_RotationSpeed * Time.deltaTime;
+        float mouseY = v_previousRotation.y * f_RotationSpeed * Time.deltaTime;               
+
+        transform.Rotate(Vector3.up * mouseX);  
+
+        float desiredXRotation = transform.eulerAngles.x - mouseY;  
+
+        desiredXRotation = Mathf.Clamp(desiredXRotation, -0.5f, 15f);   
+        
+        Quaternion desiredRotation = Quaternion.Euler(desiredXRotation, transform.eulerAngles.y, 0);     
+        transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, f_smoothness * Time.deltaTime); 
+    }
+    
+    
+    public override void OnNetworkDespawn()
+    {
+        if (!IsOwner) return;
+        
+        _inputReader.MoveEvent -= HandleMove;
+        
+        _inputReader.LookEvent -= HandleLookRotation;
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
     }
 }
