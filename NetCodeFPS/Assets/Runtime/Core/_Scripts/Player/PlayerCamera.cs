@@ -2,7 +2,7 @@ using Unity.Cinemachine;
 using Unity.Netcode;
 using UnityEngine;
 
-public class CinmeMachineCamera : NetworkBehaviour
+public class PlayerCamera : NetworkBehaviour
 {
     [SerializeField] private CinemachineCamera _camera;
     [SerializeField] private int _ownerPriority = 15;

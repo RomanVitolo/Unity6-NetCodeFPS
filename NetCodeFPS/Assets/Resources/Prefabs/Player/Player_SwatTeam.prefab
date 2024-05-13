@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 4121020382721233112}
   - component: {fileID: 3929032091022242150}
   - component: {fileID: 7694074146372177667}
+  - component: {fileID: 4524643029251501746}
   m_Layer: 0
   m_Name: Player_SwatTeam
   m_TagString: Untagged
@@ -234,8 +235,8 @@ Animator:
   m_GameObject: {fileID: 1087261916947958}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 680bc07baa32f604485ed600695b8afc, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
+  m_Controller: {fileID: 9100000, guid: 99869fa3170c80c498ac040f7f316465, type: 2}
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -398,6 +399,20 @@ MonoBehaviour:
         byte0027: 0
         byte0028: 0
         byte0029: 0
+--- !u!114 &4524643029251501746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087261916947958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba45d438c581ede4eb1bc3d45c8c7b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList: []
+  m_Animator: {fileID: 95917092424479202}
 --- !u!1 &1134392375219122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1637,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4610020771577354}
+  - {fileID: 8502279570671594836}
   m_Father: {fileID: 4910906005115920}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1544161295402188
@@ -3053,7 +3069,7 @@ Transform:
   m_GameObject: {fileID: 4468332035241342027}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.6458563e-15, y: -0.000000074505806, z: 0.000000014901161}
+  m_LocalPosition: {x: -2.6125827e-15, y: -0.0045882687, z: 0.11111739}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3079,7 +3095,7 @@ MonoBehaviour:
   m_StreamingVersion: 20230301
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 4786243547342862}
+    TrackingTarget: {fileID: 8502279570671594836}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -3183,7 +3199,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1487855293
@@ -3203,3 +3219,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerServerName: {fileID: 7694074146372177667}
   _playerNameText: {fileID: 1474435975450118408}
+--- !u!1 &8380959349105747637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8502279570671594836}
+  m_Layer: 0
+  m_Name: Camera_FollowTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8502279570671594836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8380959349105747637}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.659, z: 0.229}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4738023289113830}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

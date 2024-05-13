@@ -11,7 +11,7 @@ public class NetworkServer : IDisposable
      private Dictionary<ulong, string> ClientIdToAuth = new Dictionary<ulong, string>();
      private Dictionary<string, UserData> AuthIdToUserData = new Dictionary<string, UserData>();
      
-     private readonly NetworkManager _networkManager;    
+     private readonly NetworkManager _networkManager;         
 
      public NetworkServer(NetworkManager networkManager)
      {
