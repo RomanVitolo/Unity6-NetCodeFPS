@@ -1,3 +1,4 @@
+/*
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
@@ -24,3 +25,4 @@ public static class StartupSceneLoader
         
     }
 }
+*/

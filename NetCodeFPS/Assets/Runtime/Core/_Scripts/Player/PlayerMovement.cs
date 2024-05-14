@@ -1,16 +1,11 @@
-using System;
-using Unity.Cinemachine;
 using Unity.Netcode;
-using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine;         
 
 public class PlayerMovement : NetworkBehaviour
 {
     [SerializeField] private InputReader _inputReader;
     [SerializeField] private CharacterController _controller;
-
-    [SerializeField] private Animator _playerAnimator;
-
+    
     private const float f_Sens = 1.5f;
     private const float f_Gravity = 9.81f;
     private const float f_RotationSpeed = 10f;
@@ -27,8 +22,7 @@ public class PlayerMovement : NetworkBehaviour
 
     private void Awake()
     {
-        if(_controller == null) _controller = GetComponent<CharacterController>();     
-        if(_playerAnimator == null) _playerAnimator = GetComponent<Animator>();     
+        if(_controller == null) _controller = GetComponent<CharacterController>();          
     }
 
     public override void OnNetworkSpawn()
@@ -67,9 +61,7 @@ public class PlayerMovement : NetworkBehaviour
         v_worldDirection.Normalize();
 
         v_CurrentMovement.x = v_worldDirection.x * f_Sens;     
-        v_CurrentMovement.z = v_worldDirection.z * f_Sens;  
-        
-        _playerAnimator.SetFloat(Speed, Mathf.Abs(v_CurrentMovement.z));         
+        v_CurrentMovement.z = v_worldDirection.z * f_Sens;        
         
         ApplyGravity(); 
 
