@@ -412,7 +412,7 @@ Transform:
   m_GameObject: {fileID: 429691835}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32.7, y: 0.5, z: -25.28}
+  m_LocalPosition: {x: -32.7, y: 1.39, z: -25.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -564,7 +564,7 @@ Transform:
   m_GameObject: {fileID: 667665670}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.6, y: 0.5, z: -25.28}
+  m_LocalPosition: {x: 20.6, y: 1.39, z: -25.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -689,7 +689,7 @@ Transform:
   m_GameObject: {fileID: 1007407057}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.68, y: 0.5, z: -25.28}
+  m_LocalPosition: {x: -6.68, y: 1.39, z: -25.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -874,7 +874,7 @@ Transform:
   m_GameObject: {fileID: 1419199722}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.94, y: 0.5, z: -6.77}
+  m_LocalPosition: {x: 9.94, y: 1.39, z: -6.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1224,7 +1224,7 @@ Transform:
   m_GameObject: {fileID: 1734993319}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.09, y: 0.5, z: 8.11}
+  m_LocalPosition: {x: -7.09, y: 1.39, z: 8.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1256,7 +1256,7 @@ Transform:
   m_GameObject: {fileID: 1755327161}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.94, y: 0.5, z: 8.11}
+  m_LocalPosition: {x: 9.94, y: 1.39, z: 8.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1588,7 +1588,7 @@ Transform:
   m_GameObject: {fileID: 2074375043}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.68, y: 0.5, z: -6.77}
+  m_LocalPosition: {x: -6.68, y: 1.39, z: -6.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1618,17 +1618,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 5366015894110683396, guid: 54724db4c25187a44acebd34fbbb436e, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9160415968633030441, guid: 54724db4c25187a44acebd34fbbb436e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 9160415968633030441, guid: 54724db4c25187a44acebd34fbbb436e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6635883
+      value: 2.7410002
       objectReference: {fileID: 0}
     - target: {fileID: 9160415968633030441, guid: 54724db4c25187a44acebd34fbbb436e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.11788257
+      value: -3.974
       objectReference: {fileID: 0}
     - target: {fileID: 9160415968633030441, guid: 54724db4c25187a44acebd34fbbb436e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1636,15 +1640,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9160415968633030441, guid: 54724db4c25187a44acebd34fbbb436e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000029802319
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9160415968633030441, guid: 54724db4c25187a44acebd34fbbb436e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9160415968633030441, guid: 54724db4c25187a44acebd34fbbb436e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9160415968633030441, guid: 54724db4c25187a44acebd34fbbb436e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
